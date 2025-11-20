@@ -106,6 +106,16 @@
               type = types.port;
               description = lib.mdDoc "Port to listen on";
             };
+            tls_cert = mkOption {
+              type = types.str;
+              default = "";
+              description = lib.mdDoc "Path to the SSL certificate (leave blank for no SSL)";
+            };
+            acme_challenge = mkOption {
+              type = types.str;
+              default = "";
+              description = lib.mdDoc "Path for the ACME challenge if using Let's Encrypt.";
+            };
           };
 
           site = {
