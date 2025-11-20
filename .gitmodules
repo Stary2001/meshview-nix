@@ -1,0 +1,3 @@
+[submodule "meshview"]
+	path = meshview
+	url = https://github.com/pablorevilla-meshtastic/meshview.git
