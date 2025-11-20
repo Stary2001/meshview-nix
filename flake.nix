@@ -203,7 +203,7 @@
             User = "meshview";
             Group = "meshview";
             WorkingDirectory = cfg.dataDir;
-            ExecStart = "${pkgs.meshview.venv}/bin/python ${pkgs.meshview.src}/startdb.py --config ${configFile}";
+            ExecStart = "${pkgs.meshview.venv}/bin/python ${pkgs.meshview.src}/main.py --config ${configFile}";
             Restart = "always";
             RestartSec = 5;
           };
