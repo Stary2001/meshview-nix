@@ -89,7 +89,7 @@
       }:
       with lib;
       let cfg = config.services.meshview;
-      configFile = pkgs.writeText "config.ini" (lib.generators.toINI cfg.config);
+      configFile = pkgs.writeText "config.ini" (lib.generators.toINI {} cfg.config);
       # ....... etc
       in {
         options.services.meshview = {
