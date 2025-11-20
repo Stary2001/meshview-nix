@@ -146,7 +146,7 @@
           mqtt = {
             server = mkOption { type = types.str; description = lib.mdDoc "MQTT server address"; };
             port = mkOption { type = types.str; description = lib.mdDoc "MQTT server port"; };
-            topics = mkOption { type = types.listOf types.str; description = lib.mdDoc "List of topics"; };
+            topics = mkOption { type = types.str; description = lib.mdDoc "List of topics"; };
 
             username = mkOption { type = types.str; description = lib.mdDoc "MQTT server username"; };
             password = mkOption { type = types.str; description = lib.mdDoc "MQTT server password"; };
