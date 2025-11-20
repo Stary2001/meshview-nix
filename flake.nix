@@ -89,7 +89,14 @@
     }:
     with lib;
     let cfg = config.services.meshview;
-    configFile = pkgs.writeText "config.ini" (lib.generators.toINI {} cfg.config);
+    configFile = pkgs.writeText "config.ini" (generators.toINI {
+      mkKeyValue = generators.mkKeyValueDefault {
+        mkValueString = v:
+          if v == true then "True"
+          else if v == false then "False"
+          else generators.mkValueStringDefault {} v;
+      } "=";
+    } cfg.config);
     # ....... etc
     in {
       options.services.meshview = {
