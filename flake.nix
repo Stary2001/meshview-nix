@@ -141,31 +141,31 @@
 
             map_interval = mkOption { type = types.int; description = lib.mdDoc "a"; };
             firehose_interval = mkOption { type = types.int; description = lib.mdDoc "a"; };
+          };
 
-            mqtt = {
-              server = mkOption { type = types.str; description = lib.mdDoc "MQTT server address"; };
-              port = mkOption { type = types.str; description = lib.mdDoc "MQTT server port"; };
-              topics = mkOption { type = types.listOf types.str; description = lib.mdDoc "List of topics"; };
+          mqtt = {
+            server = mkOption { type = types.str; description = lib.mdDoc "MQTT server address"; };
+            port = mkOption { type = types.str; description = lib.mdDoc "MQTT server port"; };
+            topics = mkOption { type = types.listOf types.str; description = lib.mdDoc "List of topics"; };
 
-              username = mkOption { type = types.str; description = lib.mdDoc "MQTT server username"; };
-              password = mkOption { type = types.str; description = lib.mdDoc "MQTT server password"; };
-            };
+            username = mkOption { type = types.str; description = lib.mdDoc "MQTT server username"; };
+            password = mkOption { type = types.str; description = lib.mdDoc "MQTT server password"; };
+          };
 
-            database = {
-              connection_string = mkOption { type = types.str; default = "sqlite+aiosqlite:///packets.db"; description = lib.mdDoc "Database connection URL"; };
-            };
+          database = {
+            connection_string = mkOption { type = types.str; default = "sqlite+aiosqlite:///packets.db"; description = lib.mdDoc "Database connection URL"; };
+          };
 
-            cleanup = {
-              enabled = mkOption { type = types.bool; description = lib.mdDoc "a"; };
-              days_to_keep = mkOption { type = types.int; description = lib.mdDoc "a"; };
-              hour = mkOption { type = types.int; description = lib.mdDoc "a"; };
-              minute = mkOption { type = types.int; description = lib.mdDoc "a"; };
-              vacuum = mkOption { type = types.bool; description = lib.mdDoc "a"; };
-            };
+          cleanup = {
+            enabled = mkOption { type = types.bool; description = lib.mdDoc "Enable daily cleanup"; };
+            days_to_keep = mkOption { type = types.int; description = lib.mdDoc "Number of days to keep records in the database"; };
+            hour = mkOption { type = types.int; description = lib.mdDoc "Hour to run cleanup (24 hour format)"; };
+            minute = mkOption { type = types.int; description = lib.mdDoc "Minute to run cleanup"; };
+            vacuum = mkOption { type = types.bool; description = lib.mdDoc "Run VACUUM afterwards"; };
+          };
 
-            logging = {
-              access_log = mkOption { type = types.bool; description = lib.mdDoc "a"; };
-            };
+          logging = {
+            access_log = mkOption { type = types.bool; description = lib.mdDoc "a"; };
           };
         };
       };
