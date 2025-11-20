@@ -136,7 +136,7 @@
               description = lib.mdDoc "Initial URL";
             };
 
-            nodes = mkOption { type = types.bool; default = true; description = lib.mdDoc "Nodes"; };
+            nodes = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
             conversations = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
             graphs = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
             stats = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
@@ -151,6 +151,9 @@
 
             map_interval = mkOption { type = types.int; description = lib.mdDoc "a"; };
             firehose_interval = mkOption { type = types.int; description = lib.mdDoc "a"; };
+
+            weekly_net_message = mkOption { type = types.str; default = ""; description = lib.mdDoc "Weekly check-in message"; };
+            net_tag = mkOption { type = types.str; default = ""; description = lib.mdDoc "Tag?"; };
           };
 
           mqtt = {
