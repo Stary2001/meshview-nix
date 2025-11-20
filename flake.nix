@@ -160,7 +160,7 @@
             firehose_interval = mkOption { type = types.int; description = lib.mdDoc "a"; };
 
             weekly_net_message = mkOption { type = types.str; default = ""; description = lib.mdDoc "Weekly check-in message"; };
-            net_tag = mkOption { type = types.str; default = ""; description = lib.mdDoc "Tag?"; };
+            net_tag = mkOption { type = types.str; default = "#mymesh"; description = lib.mdDoc "Tag?"; };
           };
 
           mqtt = {
