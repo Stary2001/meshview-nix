@@ -36,7 +36,7 @@
     inherit (nixpkgs) lib;
 
     forAllSystems = lib.genAttrs lib.systems.flakeExposed;
-    workspace = uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./.; };
+    workspace = uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./deps; };
     overlay = workspace.mkPyprojectOverlay {
       sourcePreference = "wheel"; # or sourcePreference = "sdist";
     };
