@@ -2,7 +2,7 @@
   stdenv,
   fetchFromGitHub,
   writeScript,
-  pythonWithPackages,
+  venv,
   lib,
 }:
 stdenv.mkDerivation rec {
@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   sourceRoot = ".";
 
   nativeBuildInputs = [
-    pythonWithPackages
+    venv
   ];
 
   installPhase = ''
@@ -32,8 +32,8 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    homepage = "https://github.com/Gigahawk/nixos-inventree";
-    description = "InvenTree packaged for nixos";
+    homepage = "https://github.com/Stary2001/meshview-nix";
+    description = "meshview packaged for nixos";
     license = licenses.gpl3;
     platforms = platforms.all;
   };
