@@ -150,6 +150,7 @@
             net = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
             map = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
             top = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
+            everything = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
 
             map_top_left_lat = mkOption { type = types.str; description = lib.mdDoc "a"; };
             map_top_left_lon = mkOption { type = types.str; description = lib.mdDoc "a"; };
