@@ -99,6 +99,7 @@
           server = {
             bind = mkOption {
               type = types.str;
+              default = "*";
               description = lib.mdDoc "Bind address";
             };
             port = mkOption {
@@ -133,18 +134,19 @@
             map = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
             top = mkOption { type = types.bool; default = true; description = lib.mdDoc "a"; };
 
-            map_top_left_lat = mkOption { type = types.int; description = lib.mdDoc "a"; };
-            map_top_left_lon = mkOption { type = types.int; description = lib.mdDoc "a"; };
-            map_bottom_right_lat = mkOption { type = types.int; description = lib.mdDoc "a"; };
-            map_bottom_right_lon = mkOption { type = types.int; description = lib.mdDoc "a"; };
+            map_top_left_lat = mkOption { type = types.str; description = lib.mdDoc "a"; };
+            map_top_left_lon = mkOption { type = types.str; description = lib.mdDoc "a"; };
+            map_bottom_right_lat = mkOption { type = types.str; description = lib.mdDoc "a"; };
+            map_bottom_right_lon = mkOption { type = types.str; description = lib.mdDoc "a"; };
 
             map_interval = mkOption { type = types.int; description = lib.mdDoc "a"; };
             firehose_interval = mkOption { type = types.int; description = lib.mdDoc "a"; };
 
             mqtt = {
               server = mkOption { type = types.str; description = lib.mdDoc "MQTT server address"; };
-              topics = mkOption { type = types.listOf types.str; description = lib.mdDoc "List of topics"; };
               port = mkOption { type = types.str; description = lib.mdDoc "MQTT server port"; };
+              topics = mkOption { type = types.listOf types.str; description = lib.mdDoc "List of topics"; };
+
               username = mkOption { type = types.str; description = lib.mdDoc "MQTT server username"; };
               password = mkOption { type = types.str; description = lib.mdDoc "MQTT server password"; };
             };
