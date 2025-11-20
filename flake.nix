@@ -65,7 +65,7 @@
       overlays.default = (
         final: prev: {
           meshview = final.lib.makeScope final.newScope (_self: {
-            pythonWithPackages = self.packages.${prev.system}.venv;
+            venv = self.packages.${prev.system}.venv;
             src = _self.callPackage ./pkgs/src.nix {};
           });
         }
