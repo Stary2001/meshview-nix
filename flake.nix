@@ -219,6 +219,7 @@
           description = "Meshview web server";
           wantedBy = ["multi-user.target"];
           after = ["network.target" "meshview-db.service"];
+          path = [ pkgs.graphviz ]; # for dot
           serviceConfig = {
             Type = "simple";
             User = "meshview";
